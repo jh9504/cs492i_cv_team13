@@ -24,20 +24,31 @@ General Help with what each files contain:
 setup.py -contains prerequisite libraries if used additionally to what nsml provides by default
 
 models.py - contains basic training models - [resnet18, resnet50, densenet121]
+
             Setting for pretrained is turned False, because we want to see how much our code can improve training acc, 
+            
             not how finely we can tune the pretrained models given.
             
 ImageDataLoader_MT.py - Slight change to oringinally given baseline ImageDataLoader.py, which introduced parameter k to
+
                         SimpleImageloader function. The k will allow augmentation to the training data to increase the number of
+                        
                         training dataset. This file basically allows the main file to pass on train/valid/test loader to the
+                        
                         train() function.
 
 main_MT_TSA_transform.py - Changed from originally given baseline main.py. We added MeanTeacher method to training function,
+
                            Introduced Time Signal Annealing technique in training function to load and train each epochs with 
+                           
                            different datasets according to randomized transform selection using the function newly created as 
+                           
                            well.
+                           
                            The types of tests we offer are
+                           
                            1. Different applications of basic settings(we recommend setting A,B,C defined in the code: best result settings we tested):
+                           
                               a) no_trainaug k - number of augmentation for each training data
                               b) batchsize - training data batchsize
                               c) unlbatchsize - unlabeled data batchsize
@@ -47,6 +58,7 @@ main_MT_TSA_transform.py - Changed from originally given baseline main.py. We ad
                               g) epochdropdrop - epoch of which batchsize drops again (second drop)
                               h) tbs_dd - batchsize for epoch drops second time
                               i) utb_dd - unlabeled data batchsize for epoch drops second time 
+                              
                            2. Different Augmentation/transform types and number of transforms to be done
                               a) randomize - if True, randomly select transform types and how many transforms to select
                               b) n - if not 0, n number of transform types will be randomly selected
