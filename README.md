@@ -34,4 +34,27 @@ ImageDataLoader_MT.py - Slight change to oringinally given baseline ImageDataLoa
 
 main_MT_TSA_transform.py - Changed from originally given baseline main.py. We added MeanTeacher method to training function,
                            Introduced Time Signal Annealing technique in training function to load and train each epochs with 
-                           different datasets according to randomized transform selection function newly created as well.
+                           different datasets according to randomized transform selection using the function newly created as 
+                           well.
+                           The types of tests we offer are
+                           1. Different applications of basic settings(we recommend setting A,B,C defined in the code: best result settings we tested):
+                              a) no_trainaug k - number of augmentation for each training data
+                              b) batchsize - training data batchsize
+                              c) unlbatchsize - unlabeled data batchsize
+                              d) epochdrop - epoch of which batch size drops
+                              e) tbs_d - batchsize for epoch drop
+                              f) utb_d - batchsize_unlabeled for eopch drop
+                              g) epochdropdrop - epoch of which batchsize drops again (second drop)
+                              h) tbs_dd - batchsize for epoch drops second time
+                              i) utb_dd - unlabeled data batchsize for epoch drops second time 
+                           2. Different Augmentation/transform types and number of transforms to be done
+                              a) randomize - if True, randomly select transform types and how many transforms to select
+                              b) n - if not 0, n number of transform types will be randomly selected
+                              c) resize_crop - resizes the image and crops a portion
+                              d) gray - changes the image in grayscale()
+                              e) horizontal - horizontally flips the image
+                              f) jitter - has 4 degree of changes to images(brightness, contrast, saturation, hue)
+                              g) rotate - rotates the image (-35~35 degrees)
+                              h) vertical - vertically flips the image (not recommended for this dataset, since shopping images are not intentionally inverted upside down
+                              
+Good luck with the Tests!
