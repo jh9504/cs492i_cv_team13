@@ -2,7 +2,7 @@
 KAIST &amp; Naver [nsml] fashion dataset deep learning
 
 ## Usage
-This project is done by two ignorant KAIST students (1 graduate & 1 undergraduate)
+This project is done by two KAIST students (Hyeonuk Nam, Jinhyuk Ryu)
 for the class of CS492 - Deep Learning Project [Vision classification Task]
 Thanks to cooperation from NAVER, NSML Platform (enables usage of GPUs and CPUs on the server)
  - https://ai.nsml.navercorp.com/intro
