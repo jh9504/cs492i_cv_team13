@@ -15,8 +15,14 @@ This README.md will help you with how to run our code using NSML platform
 3. We two have used different programs to approach nsml server. Ubuntu and windows cmd with nsml installed according to the document above.
 4. Upload our files to whichever program you prefer, and login to nsml account by typing $nsml login
 5. type your ID and PW.
-6. assuming you are allocated with at least one GPU, type $nsml run -d fashion_dataset -e main_MT_TSA_transform.py
+
+For Training
+6-1. assuming you are allocated with at least one GPU, type $nsml run -d fashion_dataset -e main_MT_TSA_transform.py
 since you are using fashion_dataset dataset already uploaded on nsml server publicly.
+
+6-2. Our pretrained model which produced best score on nsml leader board
+ - nsml kaist0013/fashion_dataset/1881 Res18baseMM_best
+
 7. Done!
 
 ## Files
