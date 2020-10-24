@@ -285,10 +285,10 @@ parser.add_argument('--mode', type=str, default='train')
 
 # These options are for parametrization of transform augmenatation types to be used.
 # However, if randomize is selected True, rest of the options will be ignored,
-# and the two will be randomly selected: 1) number of tranforms 2) Transform types
+# and the two will be randomly selected: 1) number of transforms 2) Transform types
 # If randomize is False and n is not 0, n number of transform types will be randomly selected
 # if randomize is False and n is 0, customized transform types will be selected to be used.
-parser.add_argument('--randomize', type=bool, default=False, help='what types?')
+parser.add_argument('--randomize', type=bool, default=False, help='want to randomize augmentations?')
 parser.add_argument('--n', type=int, default=3, help='0~4. if 0: follow the rest settings')
 parser.add_argument('--resize_crop', type=bool, default=True, help='what types?')
 parser.add_argument('--gray', type=bool, default=False, help='what types?')
@@ -300,7 +300,7 @@ parser.add_argument('--vertical', type=bool, default=False, help='what types?')
 
 # function for returning transform = [transforms.example_1(), transforms.example_n()]
 # prior to previous baseline code which specified which transform types to be used during the main(),
-# utilizing this function enables the options chosen above to be selected as descibeda above.
+# utilizing this function enables the options chosen above to be selected as descibed above.
 def TransformType(imResize, imsize, n=0, randomize=False, affine=False, rotate=False, resize_crop=True, gaussian=False,
                   gray=False,
                   horizontal=False,
@@ -435,7 +435,7 @@ def main():
         # Set dataloader
 
         # we will not change validation loader.
-        # We will try to enhance the accuracy by changing only train_loader
+        # We will try to enhance the accuracy by changing only train_loader and unlabel_loader
         train_ids, val_ids, unl_ids = split_ids(os.path.join(DATASET_PATH, 'train/train_label'), 0.2)
         print(
             'found {} train, {} validation and {} unlabeled images'.format(len(train_ids), len(val_ids), len(unl_ids)))
